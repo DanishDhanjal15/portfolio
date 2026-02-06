@@ -47,7 +47,6 @@ const COMMANDS = {
     return `Download Danish Dhanjal's Resume:
     <div>
       <a href="/resume.pdf" download class="download-btn">📄 Download PDF</a>
-      <a href="/resume.docx" download class="download-btn">📝 Download DOCX</a>
     </div>
     <p class="system-msg" style="margin-top: 15px;">Note: Ensure files are in the 'public/' folder.</p>`;
   },
