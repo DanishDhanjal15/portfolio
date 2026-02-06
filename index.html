@@ -43,6 +43,7 @@
           </div>
           <p>Fill out the form below and I'll get back to you as soon as possible.</p>
           <form id="contact-form" action="https://formspree.io/f/maqdyyww" method="POST">
+            <input type="hidden" name="_next" value="#" />
             <div class="form-group">
               <label>Name *</label>
               <input type="text" name="name" placeholder="Your name" required>
@@ -57,7 +58,8 @@
             </div>
             <div class="form-group">
               <label>Message *</label>
-              <textarea name="message" placeholder="Tell me about your project or just say hello..." required></textarea>
+              <textarea name="message" placeholder="Tell me about your project or just say hello..."
+                required></textarea>
             </div>
             <div class="form-group">
               <label>Attachment (optional)</label>
