@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Danish Dhanjal Portfolio</title>
+  <!-- Modern Monospace Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+    rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+  <div id="terminal-container">
+    <div id="content-wrapper">
+      <div id="terminal-header"></div>
+      <div id="terminal-output"></div>
+      <div id="input-line">
+        <span id="prompt">danishdhanjal@portfolio:~$</span>
+        <input type="text" id="terminal-input" autofocus spellcheck="false" autocomplete="off" />
+      </div>
+    </div>
+  </div>
+
+  <div id="contact-overlay" class="hidden">
+    <div id="scanlines"></div>
+    <div class="contact-container">
+      <header class="contact-header">
+        <button id="close-contact" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Terminal</button>
+        <h1>Contact</h1>
+      </header>
+
+      <div class="contact-main">
+        <section class="message-section card">
+          <div class="card-header">
+            <span class="icon"><i class="fa-solid fa-envelope-open-text"></i></span>
+          </div>
+          <p>Fill out the form below and I'll get back to you as soon as possible.</p>
+          <form id="contact-form">
+            <div class="form-group">
+              <label>Name *</label>
+              <input type="text" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label>Email *</label>
+              <input type="email" placeholder="your.email@example.com" required>
+            </div>
+            <div class="form-group">
+              <label>Message *</label>
+              <textarea placeholder="Tell me about your project or just say hello..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary"><span>🚀</span> Send Message</button>
+          </form>
+        </section>
+
+        <div class="info-cards">
+          <div class="card info-card">
+            <span class="icon"><i class="fa-solid fa-paper-plane"></i></span>
+            <h3>Email</h3>
+            <p>danishdhanjal70@gmail.com</p>
+            <a href="mailto:danishdhanjal70@gmail.com" class="accent">Send email ↗</a>
+          </div>
+          <div class="card info-card">
+            <span class="icon"><i class="fa-solid fa-phone-flip"></i></span>
+            <h3>Phone</h3>
+            <p>+91 6283645556</p>
+            <a href="tel:+916283645556" class="accent">Call me ↗</a>
+          </div>
+          <div class="card info-card">
+            <span class="icon"><i class="fa-solid fa-earth-south-america"></i></span>
+            <h3>Location</h3>
+            <p>Asia/Kolkata</p>
+            <p class="sub-text">Available worldwide</p>
+          </div>
+        </div>
+
+        <section class="social-section">
+          <h2>Follow me</h2>
+          <div class="social-links">
+            <a href="https://github.com/DanishDhanjal15" class="social-btn">
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/danish-dhanjal-758838373" class="social-btn">
+              <i class="fa-brands fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="#" class="social-btn">
+              <i class="fa-solid fa-terminal"></i> LeetCode
+            </a>
+          </div>
+        </section>
+      </div>
+
+      <footer class="contact-footer">
+        <p>© 2026 Danish Dhanjal. All rights reserved.</p>
+        <p>Built with Terminal Magic</p>
+      </footer>
+    </div>
+  </div>
+
+  <div id="scanlines"></div>
+  <div id="custom-cursor"></div>
+  <div id="cursor-follower">
+    <div id="cursor-follower-extra"></div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
