@@ -189,17 +189,46 @@ function closeContact() {
 
 closeContactBtn.addEventListener('click', closeContact);
 
-// Handle Form Submission
-contactForm.addEventListener('submit', (e) => {
+// Handle Form Submission with Formspree
+contactForm.addEventListener('submit', async (e) => {
   e.preventDefault();
-  const name = contactForm.querySelector('input[type="text"]').value || 'Someone';
 
-  closeContact();
+  const formData = new FormData(contactForm);
+  const name = formData.get('name') || 'Someone';
 
-  writeToTerminal(`<span class="success-msg">[SYSTEM] New message received from ${name}!</span>`);
-  writeToTerminal('<span class="system-msg">Thank you for your message. I will get back to you shortly.</span>');
+  // Show loading state
+  const submitBtn = contactForm.querySelector('.btn-primary');
+  const originalText = submitBtn.innerHTML;
+  submitBtn.innerHTML = '<span>⏳</span> Sending...';
+  submitBtn.disabled = true;
 
-  contactForm.reset();
+  try {
+    const response = await fetch(contactForm.action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      // Success
+      closeContact();
+      writeToTerminal(`<span class="success-msg">[SYSTEM] ✓ Message received from ${name}!</span>`);
+      writeToTerminal('<span class="system-msg">Thank you for your message. I will get back to you shortly.</span>');
+      contactForm.reset();
+    } else {
+      // Error from Formspree
+      throw new Error('Form submission failed');
+    }
+  } catch (error) {
+    // Network or other error
+    writeToTerminal(`<span class="error-msg">[ERROR] Failed to send message. Please try again or email directly.</span>`);
+  } finally {
+    // Reset button state
+    submitBtn.innerHTML = originalText;
+    submitBtn.disabled = false;
+  }
 });
 
 // Focus terminal input on any click
