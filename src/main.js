@@ -39,9 +39,9 @@ const COMMANDS = {
      - Tech: Node.js, React/TS, VirusTotal API integration.`,
 
   skills: () => `Technical Stack:
-  - Languages: JavaScript, Python, Rust, Go
-  - Frameworks: React, Next.js, Node.js
-  - Tools: Docker, Kubernetes, AWS, Git`,
+  - Languages: JavaScript, Python, C, C++
+  - Frameworks: CyberSecurity, Web Development
+  - Tools: Docker, Git`,
 
   resume: () => {
     return `Download Danish Dhanjal's Resume:
