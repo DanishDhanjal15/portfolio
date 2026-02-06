@@ -15,7 +15,7 @@ const COMMANDS = {
   <span class="accent">skills</span>   - My technical stack
   <span class="accent">resume</span>   - Download my resume (PDF/Word)
   <span class="accent">certs</span>    - Achievements & Certifications
-  <span class="accent">contact</span>  - Open rich contact form
+  <span class="accent">contact</span>  - Open contact form
   <span class="accent">clear</span>    - Clear the terminal history
   <span class="accent">help</span>     - Show this help message`,
 
