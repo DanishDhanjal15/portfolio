@@ -16,6 +16,8 @@ const COMMANDS = {
   <span class="accent">resume</span>   - Download my resume (PDF/Word)
   <span class="accent">certs</span>    - Achievements & Certifications
   <span class="accent">contact</span>  - Open contact form
+  <span class="accent">github</span>   - Visit my GitHub profile
+  <span class="accent">linkedin</span> - Connect on LinkedIn
   <span class="accent">clear</span>    - Clear the terminal history
   <span class="accent">help</span>     - Show this help message`,
 
@@ -55,6 +57,16 @@ const COMMANDS = {
     return 'Opening contact interface...';
   },
 
+  github: () => {
+    window.open('https://github.com/DanishDhanjal15', '_blank');
+    return '<span class="accent">Opening GitHub profile...</span> <a href="https://github.com/DanishDhanjal15" target="_blank" class="accent">https://github.com/DanishDhanjal15</a>';
+  },
+
+  linkedin: () => {
+    window.open('https://www.linkedin.com/in/danish-dhanjal-b2a2a9254/', '_blank');
+    return '<span class="accent">Opening LinkedIn profile...</span> <a href="https://www.linkedin.com/in/danish-dhanjal-b2a2a9254/" target="_blank" class="accent">linkedin.com/in/danish-dhanjal-b2a2a9254</a>';
+  },
+
   certs: () => `Achievements & Professional Certifications:
   - <span class="accent">1st Place (Team)</span> - Sabka AI Hackathon 2025, organized by TIET 
     in collaboration with The University of Queensland.
@@ -89,6 +101,10 @@ const WELCOME_BANNER = `
 <p class="system-msg">Welcome to Danish Dhanjal's interactive portfolio. Type 'help' to see available commands.</p>
 `;
 
+// Command history tracking
+let commandHistory = [];
+let historyIndex = -1;
+
 function writeToTerminal(content, isCommand = false) {
   if (content === '') return;
 
@@ -103,6 +119,12 @@ function writeToTerminal(content, isCommand = false) {
 
 function handleCommand(input) {
   const trimmedInput = input.trim().toLowerCase();
+
+  // Add to command history (avoid duplicates of last command)
+  if (trimmedInput !== '' && (commandHistory.length === 0 || commandHistory[commandHistory.length - 1] !== trimmedInput)) {
+    commandHistory.push(trimmedInput);
+  }
+  historyIndex = commandHistory.length;
 
   // Re-echo the command
   writeToTerminal(`<span id="prompt">danishdhanjal@portfolio:~$</span> <span class="command-text">${trimmedInput}</span>`, true);
@@ -176,6 +198,24 @@ terminalInput.addEventListener('keydown', (e) => {
     const value = terminalInput.value;
     handleCommand(value);
     terminalInput.value = '';
+  } else if (e.key === 'ArrowUp') {
+    // Navigate backwards through history
+    e.preventDefault();
+    if (historyIndex > 0) {
+      historyIndex--;
+      terminalInput.value = commandHistory[historyIndex];
+    }
+  } else if (e.key === 'ArrowDown') {
+    // Navigate forwards through history
+    e.preventDefault();
+    if (historyIndex < commandHistory.length - 1) {
+      historyIndex++;
+      terminalInput.value = commandHistory[historyIndex];
+    } else {
+      // At the end of history, clear input
+      historyIndex = commandHistory.length;
+      terminalInput.value = '';
+    }
   }
 });
 
