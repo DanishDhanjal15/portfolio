@@ -421,6 +421,45 @@ body {
   box-shadow: 0 0 10px var(--accent-glow);
 }
 
+/* Mobile Command Buttons */
+.mobile-commands {
+  display: none;
+  /* Hidden on desktop */
+  gap: 0.5rem;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-bottom: 1px solid rgba(46, 160, 67, 0.2);
+}
+
+.cmd-btn {
+  background: rgba(30, 35, 42, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(46, 160, 67, 0.3);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-family: var(--font-main);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.cmd-btn:active {
+  background: rgba(46, 160, 67, 0.2);
+  border-color: var(--accent-color);
+  transform: scale(0.95);
+  box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.cmd-btn:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
 /* Responsiveness */
 @media (max-width: 1000px) {
   .ascii-banner {
@@ -437,6 +476,22 @@ body {
 @media (max-width: 650px) {
   .ascii-banner {
     font-size: 0.4rem;
+  }
+
+  /* Show mobile command buttons on small screens */
+  .mobile-commands {
+    display: flex;
+  }
+
+  /* Improve mobile input */
+  #terminal-input {
+    font-size: 16px;
+    /* Prevents zoom on iOS */
+    padding: 0.5rem;
+  }
+
+  #input-line {
+    gap: 0.5rem;
   }
 
   #terminal-container {

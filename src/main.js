@@ -306,4 +306,61 @@ async function startupSequence() {
   terminalInput.focus();
 }
 
+// Mobile Command Buttons
+const mobileCommandBtns = document.querySelectorAll('.cmd-btn');
+mobileCommandBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const command = btn.getAttribute('data-command');
+    terminalInput.value = command;
+    handleCommand(command);
+    terminalInput.value = '';
+    terminalInput.focus();
+  });
+});
+
+// Swipe Gesture Support for Command History
+let touchStartX = 0;
+let touchEndX = 0;
+let touchStartY = 0;
+let touchEndY = 0;
+
+const terminalContainer = document.getElementById('terminal-container');
+
+terminalContainer.addEventListener('touchstart', (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+  touchStartY = e.changedTouches[0].screenY;
+}, { passive: true });
+
+terminalContainer.addEventListener('touchend', (e) => {
+  touchEndX = e.changedTouches[0].screenX;
+  touchEndY = e.changedTouches[0].screenY;
+  handleSwipe();
+}, { passive: true });
+
+function handleSwipe() {
+  const swipeThreshold = 50;
+  const horizontalSwipe = Math.abs(touchEndX - touchStartX);
+  const verticalSwipe = Math.abs(touchEndY - touchStartY);
+
+  // Only trigger if horizontal swipe is dominant
+  if (horizontalSwipe > verticalSwipe && horizontalSwipe > swipeThreshold) {
+    if (touchEndX < touchStartX) {
+      // Swipe left - forward in history (like down arrow)
+      if (historyIndex < commandHistory.length - 1) {
+        historyIndex++;
+        terminalInput.value = commandHistory[historyIndex];
+      } else {
+        historyIndex = commandHistory.length;
+        terminalInput.value = '';
+      }
+    } else if (touchEndX > touchStartX) {
+      // Swipe right - backward in history (like up arrow)
+      if (historyIndex > 0) {
+        historyIndex--;
+        terminalInput.value = commandHistory[historyIndex];
+      }
+    }
+  }
+}
+
 startupSequence();
