@@ -14,8 +14,8 @@
     rel="stylesheet">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <script type="module" crossorigin src="/assets/index-CRJqaiuC.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-BvfXE2Ap.css">
+  <script type="module" crossorigin src="/assets/index-JiheU4B0.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CJGCQLHk.css">
 </head>
 
 <body>
@@ -23,9 +23,23 @@
     <div id="content-wrapper">
       <div id="terminal-header"></div>
       <div id="terminal-output"></div>
+      
+      <!-- Mobile Command Buttons -->
+      <div id="mobile-commands" class="mobile-commands">
+        <button class="cmd-btn" data-command="help">help</button>
+        <button class="cmd-btn" data-command="about">about</button>
+        <button class="cmd-btn" data-command="projects">projects</button>
+        <button class="cmd-btn" data-command="skills">skills</button>
+        <button class="cmd-btn" data-command="resume">resume</button>
+        <button class="cmd-btn" data-command="contact">contact</button>
+        <button class="cmd-btn" data-command="github">github</button>
+        <button class="cmd-btn" data-command="linkedin">linkedin</button>
+        <button class="cmd-btn" data-command="clear">clear</button>
+      </div>
+      
       <div id="input-line">
         <span id="prompt">danishdhanjal@portfolio:~$</span>
-        <input type="text" id="terminal-input" autofocus spellcheck="false" autocomplete="off" />
+        <input type="text" id="terminal-input" autofocus spellcheck="false" autocomplete="off" autocapitalize="off" autocorrect="off" />
       </div>
     </div>
   </div>
