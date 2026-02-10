@@ -282,6 +282,12 @@ async function startupSequence() {
   const promptArr = document.querySelectorAll('#prompt');
   promptArr.forEach(p => p.style.display = 'none');
 
+  // Hide mobile commands during startup
+  const mobileCommands = document.getElementById('mobile-commands');
+  if (mobileCommands) {
+    mobileCommands.style.display = 'none';
+  }
+
   const startupLines = [
     { text: 'Initializing system...', color: 'system-msg' },
     { text: 'Loading kernel modules...', color: 'system-msg' },
@@ -303,6 +309,12 @@ async function startupSequence() {
   await new Promise(r => setTimeout(r, 1000));
   terminalInput.style.display = 'block';
   promptArr.forEach(p => p.style.display = 'inline');
+
+  // Show mobile commands after startup completes
+  if (mobileCommands) {
+    mobileCommands.style.display = '';
+  }
+
   terminalInput.focus();
 }
 
