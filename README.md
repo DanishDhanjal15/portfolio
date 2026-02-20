@@ -1,4 +1,4 @@
-# Danish Dhanjal Portfolio
+#Danish Dhanjal Portfolio
 
 [![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://danishdhanjal.xyz)
 [![Vercel](https://img.shields.io/badge/deployed-vercel-black)](https://portfolio-bd84s77h9-danish-dhanjals-projects.vercel.app)
