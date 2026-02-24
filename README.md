@@ -4,7 +4,7 @@
 [![Vercel](https://img.shields.io/badge/deployed-vercel-black)](https://portfolio-bd84s77h9-danish-dhanjals-projects.vercel.app)
 [![GitHub Pages](https://img.shields.io/badge/backup-github%20pages-blue)](https://danishdhanjal15.github.io/portfolio/)
 
-> An interactive terminal-themed portfolio showcasing front-end development skills and cybersecurity expertise.
+> An interactive terminal-themed portfolio showcasing front-end development skills and cybersecurity expertise
 
 ## 🌐 Live Demo
 
