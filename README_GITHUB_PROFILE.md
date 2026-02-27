@@ -3,7 +3,7 @@
 <div align="center">
   
 [![Portfolio](https://img.shields.io/badge/Portfolio-danishdhanjal.xyz-2ea043?style=for-the-badge&logo=google-chrome&logoColor=white)](https://danishdhanjal.xyz)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/danish-dhanjal-758838373/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/danish-dhanjal-b2a2a9254/)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/DanishDhanjal15)
 
 </div>
@@ -16,75 +16,6 @@ Detail-oriented **Front-End Developer** with strong proficiency in building **re
 - 🏆 **1st Place Winner** - Sabka AI Hackathon 2025 (TIET x University of Queensland)
 - 💻 Building secure, user-friendly applications
 - 🌐 Check out my interactive terminal portfolio: [danishdhanjal.xyz](https://danishdhanjal.xyz)
-
-## 💼 Experience
-
-<table>
-<tr>
-<td width="80px" align="center">
-<img src="https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2.0,f_auto,g_center,h_1080,q_100,w_1080/v1/gcs/platform-data-goog/events/google-developers-seeklogo.com_GVj38As.png" width="60px"/>
-</td>
-<td>
-
-### Member - Google Developer Groups TIET
-**Nov 2025 - Present** · 4 mos  
-🔒 Cybersecurity Track
-
-</td>
-</tr>
-
-<tr>
-<td width="80px" align="center">
-<img src="https://img.icons8.com/color/96/artificial-intelligence.png" width="60px"/>
-</td>
-<td>
-
-### Hackathon Winner - Center of Excellence | Data Science and AI
-**Jan 2026 - Present** · 2 mos  
-🏆 Winner of Sabka AI Hackathon 2025
-
-</td>
-</tr>
-
-<tr>
-<td width="80px" align="center">
-<img src="https://media.licdn.com/dms/image/v2/D560BAQHKHZbkPvQKMg/company-logo_200_200/company-logo_200_200/0/1730743902379/creative_computing_society_logo?e=2147483647&v=beta&t=8cYvH9xKqYvVqxqPqYvH9xKqYvVqxqPqYvH9xKqYvVq" width="60px" onerror="this.src='https://img.icons8.com/fluency/96/light-on.png'"/>
-</td>
-<td>
-
-### Member - Creative Computing Society
-**Nov 2025 - Present** · 4 mos  
-🔒 Cybersecurity Specialization
-
-</td>
-</tr>
-
-<tr>
-<td width="80px" align="center">
-<img src="https://owasp.org/assets/images/logo.png" width="60px"/>
-</td>
-<td>
-
-### Executive Member - OWASP TIET
-**Nov 2025 - Present** · 4 mos  
-🛡️ Web Application Security & Vulnerability Research
-
-</td>
-</tr>
-
-<tr>
-<td width="80px" align="center">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Association_for_Computing_Machinery_%28ACM%29_logo.svg/1200px-Association_for_Computing_Machinery_%28ACM%29_logo.svg.png" width="60px"/>
-</td>
-<td>
-
-### Executive Member - Thapar ACM Student Chapter
-**Sep 2025 - Present** · 6 mos  
-🔒 Cybersecurity Focus
-
-</td>
-</tr>
-</table>
 
 ## 🛠️ Tech Stack
 
@@ -114,13 +45,13 @@ Detail-oriented **Front-End Developer** with strong proficiency in building **re
 
 ## 🏆 Featured Projects
 
-### 🛡️ [Protego: AI-Powered Personal Safety Platform](https://github.com/DanishDhanjal15/Protego)
+### 🛡️ [Protego: AI-Powered Personal Safety Platform](https://github.com/DanishDhanjal15)
 Full-stack safety platform with real-time monitoring and SOS alerts
 - **Tech Stack:** FastAPI, PostgreSQL, JWT, Twilio SMS
 - **AI Integration:** Whisper & LLMs for automated distress detection
 - **Features:** Real-time location tracking, emergency contacts, AI-powered threat detection
 
-### 🏠 [Aegis: Agentic AI for Home IoT Security](https://github.com/DanishDhanjal15/Aegis)
+### 🏠 [Aegis: Agentic AI for Home IoT Security](https://github.com/DanishDhanjal15)
 Plug-and-play security appliance for autonomous threat detection
 - **Features:** IoT device profiling, Honeypot deployment, Real-time defense
 - **Tech Stack:** Python, AI/ML, Network Security
@@ -163,8 +94,8 @@ Production-ready app for real-time phishing URL detection
 <div align="center">
 
 [![Portfolio](https://img.shields.io/badge/🌐_Portfolio-Visit_My_Site-2ea043?style=for-the-badge)](https://danishdhanjal.xyz)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Let's_Connect-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/danish-dhanjal-758838373/)
-[![Email](https://img.shields.io/badge/Email-Contact_Me-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:danishdhanjal70@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Let's_Connect-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/danish-dhanjal-b2a2a9254/)
+[![Email](https://img.shields.io/badge/Email-Contact_Me-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your.email@example.com)
 
 </div>
 
