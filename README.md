@@ -10,7 +10,7 @@
 
 ## 🚀 About Me
 
-Detail-oriented **Front-End Developer** with strong proficiency in building **responsive, accessible web interfaces** with clean, maintainable code. I have strong fundamentals in **Cyber Security** and am passionate about **Ethical Hacking** and **Red Teaming**. I combine front-end development expertise with security-first thinking to create cutting-edge solutions.
+Detail-oriented **Front-End Developer** with strong proficiency in building **responsive, accessible web interfaces** with clean, maintainable code. I have strong fundamentals in **Cyber Security** and am passionate about **Ethical Hacking** and **Red Teaming**. I combine front-end development expertise with security-first thinking to create cutting-edge solutions..
 
 - 🔐 Cybersecurity enthusiast with **Micro Degree from IIT-GUWAHATI**
 - 🏆 **1st Place Winner** - Sabka AI Hackathon 2025 (TIET x University of Queensland)
