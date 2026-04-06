@@ -8,6 +8,13 @@ const contactOverlay = document.getElementById('contact-overlay');
 const closeContactBtn = document.getElementById('close-contact');
 const contactForm = document.getElementById('contact-form');
 
+// Entry overlay elements
+const entryOverlay = document.getElementById('entry-overlay');
+const matrixCanvas = document.getElementById('matrix-canvas');
+const bootLog = document.getElementById('boot-log');
+const bootName = document.getElementById('boot-name');
+ 
+
 const COMMANDS = {
   help: () => `Available commands:
   <span class="accent">about</span>    - Learn about me
@@ -288,21 +295,6 @@ async function startupSequence() {
     mobileCommands.style.display = 'none';
   }
 
-  const startupLines = [
-    { text: 'Initializing system...', color: 'system-msg' },
-    { text: 'Loading kernel modules...', color: 'system-msg' },
-    { text: 'Establishing secure connection...', color: 'system-msg' },
-    { text: 'Access granted.', color: 'success-msg' },
-  ];
-
-  for (const line of startupLines) {
-    await new Promise(r => setTimeout(r, 400));
-    writeToTerminal(`<span class="${line.color}">${line.text}</span>`);
-  }
-
-  await new Promise(r => setTimeout(r, 600));
-  terminalOutput.innerHTML = '';
-
   // Show Banner in header
   terminalHeader.innerHTML = WELCOME_BANNER;
 
@@ -316,6 +308,131 @@ async function startupSequence() {
   }
 
   terminalInput.focus();
+}
+
+function sleep(ms) {
+  return new Promise((r) => setTimeout(r, ms));
+}
+
+function setTerminalVisible(visible) {
+  if (!termContainer) return;
+  termContainer.style.visibility = visible ? 'visible' : 'hidden';
+}
+
+function resizeMatrixCanvas(canvas) {
+  const dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
+  canvas.width = Math.floor(window.innerWidth * dpr);
+  canvas.height = Math.floor(window.innerHeight * dpr);
+  const ctx = canvas.getContext('2d');
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  return ctx;
+}
+
+function startMatrixRain(canvas) {
+  if (!canvas) return { stop: () => {} };
+
+  let running = true;
+  let ctx = resizeMatrixCanvas(canvas);
+
+  const fontSize = 14;
+  const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const columns = () => Math.ceil(window.innerWidth / fontSize);
+
+  let drops = new Array(columns()).fill(0).map(() => Math.random() * 50);
+
+  function onResize() {
+    ctx = resizeMatrixCanvas(canvas);
+    drops = new Array(columns()).fill(0).map(() => Math.random() * 50);
+  }
+  window.addEventListener('resize', onResize, { passive: true });
+
+  function draw() {
+    if (!running) return;
+
+    // Slight trail
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.08)';
+    ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
+
+    ctx.font = `${fontSize}px JetBrains Mono, monospace`;
+    ctx.fillStyle = 'rgba(46, 160, 67, 0.85)';
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = chars[Math.floor(Math.random() * chars.length)];
+      const x = i * fontSize;
+      const y = drops[i] * fontSize;
+      ctx.fillText(text, x, y);
+
+      if (y > window.innerHeight && Math.random() > 0.975) {
+        drops[i] = 0;
+      } else {
+        drops[i] += 1;
+      }
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  requestAnimationFrame(draw);
+
+  return {
+    stop: () => {
+      running = false;
+      window.removeEventListener('resize', onResize);
+    }
+  };
+}
+
+async function runEntrySequence() {
+  // If overlay isn't present, just start the terminal normally.
+  if (!entryOverlay || !bootLog || !bootName || !matrixCanvas) {
+    await startupSequence();
+    return;
+  }
+
+  // Hide terminal until entry finishes
+  setTerminalVisible(false);
+
+  const matrix = startMatrixRain(matrixCanvas);
+
+  const lines = [
+    '[SYSTEM] Initializing BIOS...',
+    '[SYSTEM] Performing POST (Power-On Self-Test)...',
+    '[SYSTEM] Detecting hardware components...',
+    '[SYSTEM] Loading boot loader...',
+    '[SYSTEM] Initializing kernel...',
+    '[SYSTEM] Mounting root filesystem...',
+    '[SYSTEM] Starting system services...',
+    '[SYSTEM] Configuring network interfaces...',
+    '[SYSTEM] Initializing graphical subsystem...',
+    '[SYSTEM] Loading user environment...',
+    '[SYSTEM] Performing final system checks...',
+    '[SYSTEM] SYSTEM READY'
+  ];
+
+  bootLog.innerHTML = '';
+  bootName.classList.add('hidden');
+  bootName.setAttribute('aria-hidden', 'true');
+
+  for (const line of lines) {
+    const span = document.createElement('span');
+    span.className = 'boot-line';
+    span.innerHTML = `<span class="boot-tag">[SYSTEM]</span>${line.replace('[SYSTEM]', '')}`;
+    bootLog.appendChild(span);
+    await sleep(180 + Math.random() * 110);
+  }
+
+  await sleep(250);
+  bootName.classList.remove('hidden');
+  bootName.setAttribute('aria-hidden', 'false');
+
+  await sleep(650);
+  entryOverlay.classList.add('hidden');
+  entryOverlay.setAttribute('aria-hidden', 'true');
+
+  await sleep(650);
+  matrix.stop();
+  setTerminalVisible(true);
+  await startupSequence();
 }
 
 // Mobile Command Buttons
@@ -375,4 +492,4 @@ function handleSwipe() {
   }
 }
 
-startupSequence();
+runEntrySequence();

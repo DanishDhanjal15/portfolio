@@ -17,6 +17,19 @@
 </head>
 
 <body>
+  <!-- Entry / Boot Screen (only shown on first load) -->
+  <div id="entry-overlay" aria-hidden="false">
+    <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+    <div id="boot-panel" role="presentation">
+      <div id="boot-log" aria-live="polite" aria-atomic="false"></div>
+      <div id="boot-name" class="hidden" aria-hidden="true">
+        <div class="boot-name-line">DANISH DHANJAL</div>
+        <div class="boot-name-line">PORTFOLIO</div>
+        <div class="boot-sub">System loaded successfully</div>
+      </div>
+    </div>
+  </div>
+
   <div id="terminal-container">
     <div id="content-wrapper">
       <div id="terminal-header"></div>
