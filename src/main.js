@@ -33,19 +33,26 @@ const COMMANDS = {
   Passionate with front-end development to create cutting-edge solutions. Collaborative, adaptable, and focused on delivering optimized, user-friendly applications.`,
 
   projects: () => `My Key Projects:
-  1. <span class="accent">Protego: AI-Powered Personal Safety Platform</span>
+  1. <span class="accent">[MAJOR] DanishRecon – Advanced Vulnerability Reconnaissance Platform</span>  <a href="https://github.com/DanishDhanjal15/HackOwasp_Project" target="_blank" class="accent">[ GitHub ↗ ]</a>
+     - Tech: Python, PyQt5, NetworkX, SQLite
+     - Unified security platform automating multi-stage recon workflows:
+       service discovery, vulnerability scanning, subdomain enumeration.
+     - Threat context engine mapping services to CVEs with CVSS scoring
+       and MITRE ATT&CK techniques for risk-based prioritization.
+     - Visual attack-path mapping using NetworkX to analyze chained
+       vulnerability exploit vectors.
+     - Automated reporting with compliance mapping (PCI-DSS, NIST, CIS)
+       and multi-format export (PDF, HTML, JSON).
+
+  2. <span class="accent">Protego: AI-Powered Personal Safety Platform</span>  <a href="https://github.com/DanishDhanjal15/Protego" target="_blank" class="accent">[ GitHub ↗ ]</a>
      - Full-stack safety platform with real-time monitoring and SOS alerts.
      - Tech: FastAPI, PostgreSQL, JWT, Twilio SMS.
      - AI: Integrated Whisper & LLMs for automated distress detection.
 
-  2. <span class="accent">Aegis: Agentic AI for Home IoT Security</span>
+  3. <span class="accent">Aegis: Agentic AI for Home IoT Security</span>  <a href="https://github.com/DanishDhanjal15/Aegis" target="_blank" class="accent">[ GitHub ↗ ]</a>
      - Plug-and-play security appliance for autonomous threat detection.
      - Features: IoT profiling, Honeypots (deception), and real-time defense.
-     - Unified risk dashboard for everything from TVs to wearables.
-
-  3. <span class="accent">Phishing Detection and Response System</span>
-     - Production-ready app for real-time phishing URL detection.
-     - Tech: Node.js, React/TS, VirusTotal API integration.`,
+     - Unified risk dashboard for everything from TVs to wearables.`,
 
   skills: () => `Technical Stack:
   - Languages: JavaScript, Python, C, C++

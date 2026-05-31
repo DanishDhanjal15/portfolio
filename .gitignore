@@ -31,3 +31,7 @@ dist-ssr
 # Build artifacts
 build/
 .cache/
+
+# Resume (keep local only)
+public/resume.pdf
+*.pdf
