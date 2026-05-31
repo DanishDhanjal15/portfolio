@@ -32,6 +32,6 @@ dist-ssr
 build/
 .cache/
 
-# Resume (keep local only)
-public/resume.pdf
-*.pdf
+# Resume (keep root copy local only, allow public/ copy for deployment)
+/*.pdf
+!public/resume.pdf
